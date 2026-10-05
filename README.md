@@ -46,4 +46,19 @@ Upravujte přímo HTML soubory a `assets/styles.css`. Navigace a patička jsou z
 6. Hlubší stránky potřebují cestu ke stylům a hlavní navigaci `../../`. Doplňte vlastní title, description, canonical a Open Graph URL a správné `aria-current`.
 7. Publikované URL přidejte do `sitemap.xml`.
 
-Před pushem ověřte odkazy, mobilní i desktopové zobrazení, klávesnici, focus a `git diff --check`. Web nemá animace. Zásady aplikací zatím nejsou publikované a rozcestník je nenahrazuje. Favicon není přidána, aby provizorní grafika nepůsobila jako oficiální logo.
+Před pushem ověřte odkazy, mobilní i desktopové zobrazení, klávesnici, focus a `git diff --check`. Web nemá animace. Zásady aplikací zatím nejsou publikované a rozcestník je nenahrazuje. Logo a favicony jsou odvozeny z dodaného finálního loga, nikoli z brandingových přehledů.
+
+
+## Branding a assety
+
+Barvy jsou definované v `:root` v `assets/styles.css`: téměř černé pozadí, tmavý povrch, bílý text, tlumený text, žlutý akcent `#ffc933` a jemné ohraničení. Fonty zůstávají systémové.
+
+Zdroj: vlastníkem dodaný `ByMarianStudio logo.png` (1254 × 1254 px). Z něj je použit čtvercový výřez `(210, 175, 1040, 1005)` bez změny proporcí, kresby či barev symbolu. Přebytečné okolní pozadí je odstraněno ořezem, původní tmavé pozadí pod symbolem zůstává. Exporty jsou zmenšené filtrem Lanczos a optimalizované:
+
+- `assets/brand/logo-128.png` — hlavička, zobrazení 48 × 48 CSS px i na jemných displejích.
+- `assets/brand/logo-512.jpg` — sdílený Open Graph obrázek.
+- `assets/brand/icon-32.png` — PNG favicon.
+- `assets/brand/icon-180.png` — Apple touch icon.
+- `favicon.ico` — velikosti 16, 32, 48 a 64 px pro prohlížeče.
+
+Logo v hlavičce má prázdný alt, protože název značky je součástí stejného odkazu a čtečka jej přečte jednou. Open Graph obrázek má vlastní popis. Brandingové přehledy nejsou součástí webu. Zpracování obrázků bylo jednorázové; web nevyžaduje žádný nový nástroj ani build.
